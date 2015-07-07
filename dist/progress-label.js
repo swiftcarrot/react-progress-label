@@ -12,17 +12,20 @@ module.exports = React.createClass({
     progressWidth: React.PropTypes.number,
     trackWidth: React.PropTypes.number,
     cornersWidth: React.PropTypes.number,
-    progress: React.PropTypes.number
+    progress: React.PropTypes.number,
+    fillColor: React.PropTypes.string,
+    trackColor: React.PropTypes.string,
+    progressColor: React.PropTypes.string
   },
 
   getDefaultProps: function getDefaultProps() {
     return {
-      startDegree: 45,
-      endDegree: 140,
-      progressWidth: 8,
-      trackWidth: 20,
-      cornersWidth: 2,
-      size: 400
+      startDegree: 0,
+      progress: 0,
+      progressWidth: 5,
+      trackWidth: 5,
+      cornersWidth: 10,
+      size: 200
     };
   },
 
@@ -39,29 +42,24 @@ module.exports = React.createClass({
     var size = this.props.size;
     var r = 50 - this.props.trackWidth / 2;
     var startDegree = this.props.startDegree;
-    var endDegree = this.props.endDegree;
+    var progress = this.props.progress;
+    var endDegree = startDegree + progress * 360 / 100;
 
-    var range = endDegree - startDegree;
     var s = this.getPoint(r, this.props.startDegree);
-    var e = this.getPoint(r, this.props.endDegree);
-    var progress = parseInt(range / 360 * 100, 10);
+    var e = this.getPoint(r, endDegree);
 
-    var progressPath = range < 180 ? 'M ' + s.x + ' ' + s.y + ' A ' + r + ' ' + r + ', 0, 0, 1, ' + e.x + ',' + e.y : 'M ' + s.x + ' ' + s.y + ' A ' + r + ' ' + r + ', 0, 1, 1, ' + e.x + ',' + e.y;
+    var progressPath = progress < 50 ? 'M ' + s.x + ' ' + s.y + ' A ' + r + ' ' + r + ', 0, 0, 1, ' + e.x + ',' + e.y : 'M ' + s.x + ' ' + s.y + ' A ' + r + ' ' + r + ', 0, 1, 1, ' + e.x + ',' + e.y;
 
     var progressStyle = {
       strokeWidth: this.props.progressWidth,
-      stroke: '#3498db',
+      stroke: this.props.progressColor,
       fill: 'none'
     };
 
     var trackStyle = {
-      fill: 'none',
-      stroke: '#efefef',
+      fill: this.props.fillColor,
+      stroke: this.props.trackColor,
       strokeWidth: this.props.trackWidth
-    };
-
-    var textStyle = {
-      textAnchor: 'middle'
     };
 
     return React.createElement(
@@ -77,13 +75,9 @@ module.exports = React.createClass({
         d: progressPath,
         style: progressStyle
       }),
-      React.createElement('circle', { cx: s.x, cy: s.y, r: this.props.cornersWidth, fill: 'red' }),
-      React.createElement('circle', { cx: e.x, cy: e.y, r: this.props.cornersWidth, fill: 'green' }),
-      React.createElement(
-        'text',
-        { x: '50', y: '50', style: textStyle },
-        '' + progress + '%'
-      )
+      React.createElement('circle', { cx: s.x, cy: s.y, r: this.props.cornersWidth, fill: this.props.progressColor }),
+      React.createElement('circle', { cx: e.x, cy: e.y, r: this.props.cornersWidth, fill: this.props.progressColor }),
+      this.props.children
     );
   }
 });
