@@ -1,0 +1,35 @@
+{
+  "name": "react-progress-label",
+  "version": "1.0.0",
+  "description": "progress label component",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel lib --out-dir dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wang Zuo",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "babel-core": "^5.6.15",
+    "babel-loader": "^5.3.1",
+    "node-libs-browser": "^0.5.2",
+    "webpack": "^1.10.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangzuo/react-progress-label.git"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "progress",
+    "circle"
+  ],
+  "bugs": {
+    "url": "https://github.com/wangzuo/react-progress-label/issues"
+  },
+  "homepage": "https://github.com/wangzuo/react-progress-label#readme"
+}
