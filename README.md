@@ -1,5 +1,5 @@
 # react-progress-label
-progress label component inspired by [kirualex/KAProgressLabel](https://github.com/kirualex/KAProgressLabel) with svg
+progress label component copied from [kirualex/KAProgressLabel](https://github.com/kirualex/KAProgressLabel) with svg
 ### Installation
 ``` sh
 npm install react-progress-label --save
@@ -13,18 +13,30 @@ var App = React.createClass({
   displayName: 'App',
 
   render() {
-    return <ProgressLabel
-      startDegree={60}
-      endDegree={240}
-      progressWidth={8}
-      trackWidth={20}
-      cornersWidth={4}
-      size={400}
-    />;
+    var progress = 50;
+    var textStyle = {
+      'fill': '#ffffff',
+      'textAnchor': 'middle'
+    };
+
+    return (
+      <ProgressLabel
+        progress={progress}
+        startDegree={60}
+        progressWidth={8}
+        trackWidth={20}
+        cornersWidth={4}
+        size={400}
+        fillColor="black"
+        trackColor="red"
+        progressColor="green">
+
+        <text x="50" y="50" style={textStyle}>{`${progress}%`}</text>
+
+      </ProgressLabel>
+    );
   }
 });
-
-React.render(<App/>, document.body);
 ```
 ### License
 ISC
