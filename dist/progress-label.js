@@ -76,12 +76,22 @@ module.exports = React.createClass({
         r: r,
         style: trackStyle
       }),
-      React.createElement('path', {
+      progress > 0 ? React.createElement('path', {
         d: progressPath,
         style: progressStyle
-      }),
-      React.createElement('circle', { cx: s.x, cy: s.y, r: this.props.cornersWidth, fill: this.props.progressColor }),
-      React.createElement('circle', { cx: e.x, cy: e.y, r: this.props.cornersWidth, fill: this.props.progressColor }),
+      }) : null,
+      progress > 0 ? React.createElement('circle', {
+        cx: s.x,
+        cy: s.y,
+        r: this.props.cornersWidth,
+        fill: this.props.progressColor
+      }) : null,
+      progress > 0 ? React.createElement('circle', {
+        cx: e.x,
+        cy: e.y,
+        r: this.props.cornersWidth,
+        fill: this.props.progressColor
+      }) : null,
       this.props.children
     );
   }
