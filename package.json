@@ -4,8 +4,8 @@
   "description": "progress label component",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server -c --port=7788",
     "build": "babel lib --out-dir dist & webpack -p",
+    "start": "webpack-dev-server -c --port=7788",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Wang Zuo",
@@ -20,6 +20,8 @@
     "less": "^2.5.1",
     "less-loader": "^2.2.0",
     "node-libs-browser": "^0.5.2",
+    "react-input-color": "^1.4.0",
+    "react-input-slider": "^1.0.9",
     "style-loader": "^0.12.3",
     "webpack": "^1.10.1"
   },
