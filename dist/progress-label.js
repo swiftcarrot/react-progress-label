@@ -1,5 +1,7 @@
 'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var React = require('react');
 
 module.exports = React.createClass({
@@ -69,7 +71,7 @@ module.exports = React.createClass({
 
     return React.createElement(
       'svg',
-      { width: size, height: size, viewBox: '0 0 100 100' },
+      _extends({}, this.props, { width: size, height: size, viewBox: '0 0 100 100' }),
       React.createElement('circle', {
         cx: '50',
         cy: '50',

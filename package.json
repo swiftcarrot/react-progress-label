@@ -1,6 +1,6 @@
 {
   "name": "react-progress-label",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "progress label component",
   "main": "index.js",
   "scripts": {
