@@ -1,5 +1,6 @@
 require('react-input-color/lib/input-color.less');
 require('react-input-slider/lib/input-slider.less');
+require('./app.less');
 
 var React = require('react');
 var ProgressLabel = require('../lib/progress-label');
@@ -10,6 +11,51 @@ var textStyle = {
  'fill': '#ffffff',
  'textAnchor': 'middle'
 };
+
+var NestedExample = React.createClass({
+  displayName: 'NestedExample',
+
+  render() {
+    return (
+      <div className="m-nested">
+        <div className="example">
+          <ProgressLabel
+            className="label-1"
+            progress={40}
+            progressWidth={10}
+            trackWidth={10}
+            cornersWidth={5}
+            progressColor="#ff0000"
+            trackColor="#330000"
+            size={250}>
+          </ProgressLabel>
+
+          <ProgressLabel
+            className="label-2"
+            progress={50}
+            progressWidth={14}
+            trackWidth={14}
+            cornersWidth={7}
+            progressColor="#00ff00"
+            trackColor="#003300"
+            size={190}>
+          </ProgressLabel>
+
+          <ProgressLabel
+            className="label-3"
+            progress={80}
+            progressWidth={20}
+            trackWidth={20}
+            cornersWidth={10}
+            progressColor="#05bae0"
+            trackColor="#01252d"
+            size={126}>
+          </ProgressLabel>
+        </div>
+      </div>
+    );
+  }
+});
 
 var App = React.createClass({
   displayName: 'App',
@@ -58,6 +104,8 @@ var App = React.createClass({
   render() {
     return (
       <div className="app">
+        <h3>Basic</h3>
+
         <ProgressLabel
           progress={this.state.progress}
           startDegree={this.state.startDegree}
@@ -83,6 +131,9 @@ var App = React.createClass({
           {this.renderColor('trackColor', this.state.trackColor)}
           {this.renderColor('progressColor', this.state.progressColor)}
         </div>
+
+        <h3>Nested</h3>
+        <NestedExample/>
       </div>
     );
   },
@@ -98,4 +149,4 @@ var App = React.createClass({
   }
 });
 
-React.render(<App/>, document.body);
+React.render(<App/>, document.getElementById('app'));

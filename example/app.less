@@ -1,0 +1,44 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.m-nested {
+  width: 300px;
+  height: 300px;
+  padding: 20px;
+  background-color: #000;
+
+  .example {
+    position: relative;
+  }
+    svg {
+    position: absolute;
+  }
+
+  .label-1 {
+    top: 0;
+    left: 0;
+  }
+
+  .label-2 {
+    top: 30px;
+    left: 30px;
+  }
+
+  .label-3 {
+    top: 62px;
+    left: 62px;
+  }
+}
