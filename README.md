@@ -35,7 +35,7 @@ var App = React.createClass({
         trackColor="red"
         progressColor="green">
 
-        <text x="50" y="50" style={textStyle}>{`${progress}%`}</text>
+        <text x="200" y="200" style={textStyle}>{`${progress}%`}</text>
 
       </ProgressLabel>
     );

@@ -16,15 +16,19 @@ var NestedExample = React.createClass({
   displayName: 'NestedExample',
 
   render() {
+    var pw = 24;
+    var cw = pw / 2;
+    var tw = pw;
+
     return (
       <div className="m-nested">
         <div className="example">
           <ProgressLabel
             className="label-1"
             progress={40}
-            progressWidth={10}
-            trackWidth={10}
-            cornersWidth={5}
+            progressWidth={pw}
+            trackWidth={tw}
+            cornersWidth={cw}
             progressColor="#ff0000"
             trackColor="#330000"
             size={250}>
@@ -33,9 +37,9 @@ var NestedExample = React.createClass({
           <ProgressLabel
             className="label-2"
             progress={50}
-            progressWidth={14}
-            trackWidth={14}
-            cornersWidth={7}
+            progressWidth={pw}
+            trackWidth={tw}
+            cornersWidth={cw}
             progressColor="#00ff00"
             trackColor="#003300"
             size={190}>
@@ -44,12 +48,12 @@ var NestedExample = React.createClass({
           <ProgressLabel
             className="label-3"
             progress={80}
-            progressWidth={20}
-            trackWidth={20}
-            cornersWidth={10}
+            progressWidth={pw}
+            trackWidth={tw}
+            cornersWidth={cw}
             progressColor="#05bae0"
             trackColor="#01252d"
-            size={126}>
+            size={130}>
           </ProgressLabel>
         </div>
       </div>
@@ -64,8 +68,8 @@ var App = React.createClass({
     return {
       startDegree: 60,
       progress: 50,
-      progressWidth: 8,
-      trackWidth: 20,
+      progressWidth: 20,
+      trackWidth: 40,
       cornersWidth: 4,
       size: 300,
       fillColor: '#000000',
@@ -77,7 +81,7 @@ var App = React.createClass({
   renderSlider(name, min, max) {
     return (
       <div>
-        <span>{name}</span>
+        <span>{`${name} (${this.state[name]})`}</span>
         <Slider
           className="slider slider-x"
           x={this.state[name]}
@@ -102,6 +106,8 @@ var App = React.createClass({
   },
 
   render() {
+    var size = this.state.size;
+
     return (
       <div className="app">
         <h3>Basic</h3>
@@ -117,15 +123,15 @@ var App = React.createClass({
           trackColor={this.state.trackColor}
           progressColor={this.state.progressColor}>
 
-          <text x="50" y="50" style={textStyle}>{`${parseInt(this.state.progress, 10)}%`}</text>
+          <text x={size/2} y={size/2} style={textStyle}>{`${parseInt(this.state.progress, 10)}%`}</text>
         </ProgressLabel>
 
         <div className="controls">
           {this.renderSlider('progress', 0, 100)}
           {this.renderSlider('startDegree', 0, 360)}
-          {this.renderSlider('progressWidth', 1, 20)}
-          {this.renderSlider('trackWidth', 1, 30)}
-          {this.renderSlider('cornersWidth', 1, 20)}
+          {this.renderSlider('progressWidth', 1, 100)}
+          {this.renderSlider('trackWidth', 1, 100)}
+          {this.renderSlider('cornersWidth', 1, 50)}
           {this.renderSlider('size', 100, 400)}
           {this.renderColor('fillColor', this.state.fillColor)}
           {this.renderColor('trackColor', this.state.trackColor)}
