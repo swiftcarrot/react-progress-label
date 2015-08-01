@@ -32,10 +32,11 @@ module.exports = React.createClass({
   },
 
   getPoint: function getPoint(r, degree) {
+    var size = this.props.size;
     var d = degree / 180 * Math.PI;
 
     return {
-      x: r * Math.sin(d) + 50,
+      x: r * Math.sin(d) + size / 2,
       y: this.props.trackWidth / 2 + r * (1 - Math.cos(d))
     };
   },
@@ -43,7 +44,7 @@ module.exports = React.createClass({
   render: function render() {
     var size = this.props.size;
     var progress = this.props.progress;
-    var r = 50 - this.props.trackWidth / 2;
+    var r = size / 2 - this.props.trackWidth / 2;
     var startDegree = this.props.startDegree;
     var endDegree = startDegree + progress * 360 / 100;
     var s = this.getPoint(r, this.props.startDegree);
@@ -71,10 +72,10 @@ module.exports = React.createClass({
 
     return React.createElement(
       'svg',
-      _extends({}, this.props, { width: size, height: size, viewBox: '0 0 100 100' }),
+      _extends({}, this.props, { width: size, height: size, viewBox: '0 0 ' + size + ' ' + size }),
       React.createElement('circle', {
-        cx: '50',
-        cy: '50',
+        cx: size / 2,
+        cy: size / 2,
         r: r,
         style: trackStyle
       }),
