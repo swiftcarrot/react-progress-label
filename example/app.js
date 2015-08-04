@@ -1,5 +1,5 @@
-require('react-input-color/lib/input-color.less');
-require('react-input-slider/lib/input-slider.less');
+require('react-input-color/dist/input-color.css');
+require('react-input-slider/dist/input-slider.css');
 require('./app.less');
 
 var React = require('react');
@@ -81,9 +81,9 @@ var App = React.createClass({
   renderSlider(name, min, max) {
     return (
       <div>
-        <span>{`${name} (${this.state[name]})`}</span>
+        <div>{`${name} (${this.state[name]})`}</div>
         <Slider
-          className="slider slider-x"
+          className="x-slider"
           x={this.state[name]}
           xmin={min}
           xmax={max}
@@ -126,7 +126,7 @@ var App = React.createClass({
           <text x={size/2} y={size/2} style={textStyle}>{`${parseInt(this.state.progress, 10)}%`}</text>
         </ProgressLabel>
 
-        <div className="controls">
+        <div className="m-controls">
           {this.renderSlider('progress', 0, 100)}
           {this.renderSlider('startDegree', 0, 360)}
           {this.renderSlider('progressWidth', 1, 100)}

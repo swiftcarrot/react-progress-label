@@ -20,7 +20,7 @@
     "less": "^2.5.1",
     "less-loader": "^2.2.0",
     "node-libs-browser": "^0.5.2",
-    "react-input-color": "^1.4.0",
+    "react-input-color": "^1.4.3",
     "react-input-slider": "^1.0.9",
     "style-loader": "^0.12.3",
     "webpack": "^1.10.1"
@@ -38,5 +38,9 @@
   "bugs": {
     "url": "https://github.com/wangzuo/react-progress-label/issues"
   },
-  "homepage": "https://github.com/wangzuo/react-progress-label#readme"
+  "homepage": "https://github.com/wangzuo/react-progress-label#readme",
+  "dependencies": {
+    "react-input-color": "^1.4.2",
+    "react-input-slider": "^1.1.1"
+  }
 }
