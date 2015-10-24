@@ -3,6 +3,7 @@ require('react-input-slider/dist/input-slider.css');
 require('./app.less');
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var ProgressLabel = require('../lib/progress-label');
 var Color = require('react-input-color');
 var Slider = require('react-input-slider');
@@ -155,4 +156,4 @@ var App = React.createClass({
   }
 });
 
-React.render(<App/>, document.getElementById('app'));
+ReactDOM.render(<App/>, document.getElementById('app'));
