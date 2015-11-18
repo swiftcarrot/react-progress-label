@@ -1,13 +1,13 @@
 # react-progress-label
 progress label component copied from [kirualex/KAProgressLabel](https://github.com/kirualex/KAProgressLabel) with svg
 
-![screenshot](https://raw.githubusercontent.com/wangzuo/react-progress-label/gh-pages/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/wangzuo/react-progress-label/master/screenshot.png)
 ### Installation
 ``` sh
 npm install react-progress-label --save
 ```
 ### Demo
-[http://wangzuo.github.io/react-progress-label/example/](http://wangzuo.github.io/react-progress-label/example/)
+[http://wangzuo.github.io/react-progress-label](http://wangzuo.github.io/react-progress-label)
 ### Usage
 ``` javascript
 var React = require('react');
