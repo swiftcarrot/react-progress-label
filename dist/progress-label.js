@@ -30,7 +30,6 @@ module.exports = React.createClass({
       size: 200
     };
   },
-
   getPoint: function getPoint(r, degree) {
     var size = this.props.size;
     var d = degree / 180 * Math.PI;
@@ -40,7 +39,6 @@ module.exports = React.createClass({
       y: this.props.trackWidth / 2 + r * (1 - Math.cos(d))
     };
   },
-
   render: function render() {
     var size = this.props.size;
     var progress = this.props.progress;
