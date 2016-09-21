@@ -2,6 +2,8 @@
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 var React = require('react');
 
 module.exports = React.createClass({
@@ -40,12 +42,23 @@ module.exports = React.createClass({
     };
   },
   render: function render() {
-    var size = this.props.size;
-    var progress = this.props.progress;
-    var r = size / 2 - this.props.trackWidth / 2;
-    var startDegree = this.props.startDegree;
+    var _props = this.props;
+    var progress = _props.progress;
+    var progressWidth = _props.progressWidth;
+    var progressColor = _props.progressColor;
+    var trackWidth = _props.trackWidth;
+    var cornersWidth = _props.cornersWidth;
+    var fillColor = _props.fillColor;
+    var trackColor = _props.trackColor;
+    var startDegree = _props.startDegree;
+    var size = _props.size;
+    var children = _props.children;
+
+    var props = _objectWithoutProperties(_props, ['progress', 'progressWidth', 'progressColor', 'trackWidth', 'cornersWidth', 'fillColor', 'trackColor', 'startDegree', 'size', 'children']);
+
+    var r = size / 2 - trackWidth / 2;
     var endDegree = startDegree + progress * 360 / 100;
-    var s = this.getPoint(r, this.props.startDegree);
+    var s = this.getPoint(r, startDegree);
     var e = this.getPoint(r, endDegree);
 
     var progressPath = null;
@@ -57,20 +70,20 @@ module.exports = React.createClass({
     }
 
     var progressStyle = {
-      strokeWidth: this.props.progressWidth,
-      stroke: this.props.progressColor,
+      strokeWidth: progressWidth,
+      stroke: progressColor,
       fill: 'none'
     };
 
     var trackStyle = {
-      fill: this.props.fillColor,
-      stroke: this.props.trackColor,
-      strokeWidth: this.props.trackWidth
+      fill: fillColor,
+      stroke: trackColor,
+      strokeWidth: trackWidth
     };
 
     return React.createElement(
       'svg',
-      _extends({}, this.props, { width: size, height: size, viewBox: '0 0 ' + size + ' ' + size }),
+      _extends({}, props, { width: size, height: size, viewBox: '0 0 ' + size + ' ' + size }),
       React.createElement('circle', {
         cx: size / 2,
         cy: size / 2,
@@ -84,16 +97,16 @@ module.exports = React.createClass({
       progress > 0 ? React.createElement('circle', {
         cx: s.x,
         cy: s.y,
-        r: this.props.cornersWidth,
-        fill: this.props.progressColor
+        r: cornersWidth,
+        fill: progressColor
       }) : null,
       progress > 0 ? React.createElement('circle', {
         cx: e.x,
         cy: e.y,
-        r: this.props.cornersWidth,
-        fill: this.props.progressColor
+        r: cornersWidth,
+        fill: progressColor
       }) : null,
-      this.props.children
+      children
     );
   }
 });
