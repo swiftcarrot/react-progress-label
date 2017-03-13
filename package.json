@@ -3,6 +3,7 @@
   "version": "1.2.2",
   "description": "progress label component",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "build": "babel lib --out-dir dist & webpack -p",
     "start": "webpack-dev-server -c --port=7788",
