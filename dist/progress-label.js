@@ -17,9 +17,9 @@ module.exports = React.createClass({
     trackWidth: React.PropTypes.number,
     cornersWidth: React.PropTypes.number,
     progress: React.PropTypes.number,
-    fillColor: React.PropTypes.string,
-    trackColor: React.PropTypes.string,
-    progressColor: React.PropTypes.string
+    fillColor: React.PropTypes.string.isRequired,
+    trackColor: React.PropTypes.string.isRequired,
+    progressColor: React.PropTypes.string.isRequired
   },
 
   getDefaultProps: function getDefaultProps() {
