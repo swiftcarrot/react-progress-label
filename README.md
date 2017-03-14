@@ -1,4 +1,4 @@
-# react-progress-label
+# react-progress-label [![Build Status](https://travis-ci.org/wangzuo/react-progress-label.svg?branch=master)](https://travis-ci.org/wangzuo/react-progress-label)
 progress label component copied from [kirualex/KAProgressLabel](https://github.com/kirualex/KAProgressLabel) with svg
 
 ![screenshot](https://raw.githubusercontent.com/wangzuo/react-progress-label/master/screenshot.png)
