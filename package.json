@@ -5,10 +5,10 @@
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "build": "babel lib --out-dir dist & webpack -p",
+    "build": "babel src --out-dir dist & webpack -p",
     "start": "webpack-dev-server -c --port=7788",
     "deploy": "npm run build & github-pages-deploy",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "github-pages-deploy": {
     "src": "example"
@@ -52,5 +52,16 @@
   "bugs": {
     "url": "https://github.com/wangzuo/react-progress-label/issues"
   },
-  "homepage": "https://github.com/wangzuo/react-progress-label#readme"
+  "homepage": "https://github.com/wangzuo/react-progress-label#readme",
+  "dependencies": {
+    "prop-types": "^15.5.10"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true
+  }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import ProgressLabel from '../lib/progress-label';
+import ProgressLabel from '../src/progress-label';
 
 export default () => {
   const pw = 24;
