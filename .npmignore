@@ -1,5 +1,6 @@
 src
 example
+coverage
 __fixtures__
 __tests__
 yarn.lock
