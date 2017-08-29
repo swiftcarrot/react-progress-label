@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class ProgressLabel extends Component {
   static propTypes = {
-    size: React.PropTypes.number,
-    startDegree: React.PropTypes.number,
-    endDegree: React.PropTypes.number,
-    progressWidth: React.PropTypes.number,
-    trackWidth: React.PropTypes.number,
-    cornersWidth: React.PropTypes.number,
-    progress: React.PropTypes.number,
-    fillColor: React.PropTypes.string.isRequired,
-    trackColor: React.PropTypes.string.isRequired,
-    progressColor: React.PropTypes.string.isRequired
+    size: PropTypes.number,
+    startDegree: PropTypes.number,
+    endDegree: PropTypes.number,
+    progressWidth: PropTypes.number,
+    trackWidth: PropTypes.number,
+    cornersWidth: PropTypes.number,
+    progress: PropTypes.number,
+    fillColor: PropTypes.string.isRequired,
+    trackColor: PropTypes.string.isRequired,
+    progressColor: PropTypes.string.isRequired
   };
 
   static defaultProps = {

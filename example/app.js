@@ -1,15 +1,14 @@
-require('react-input-color/dist/input-color.css');
-require('react-input-slider/dist/input-slider.css');
-require('./app.less');
+import 'react-input-color/dist/input-color.css';
+import 'react-input-slider/dist/input-slider.css';
+import './app.less';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import Color from 'react-input-color';
+import Slider from 'react-input-slider';
+import ProgressLabel from '../src/progress-label';
+import NestedExample from '../__fixtures__/nested';
 
-const React = require('react');
-const ReactDOM = require('react-dom');
-const Color = require('react-input-color');
-const Slider = require('react-input-slider');
-const ProgressLabel = require('../lib/progress-label');
-const NestedExample = require('../__fixtures__/nested');
-
-class App extends React.Component {
+class App extends Component {
   state = {
     startDegree: 60,
     progress: 50,
@@ -52,7 +51,9 @@ class App extends React.Component {
   renderColor(name) {
     return (
       <div>
-        <span>{name}</span>
+        <span>
+          {name}
+        </span>
         <Color
           value={this.state[name]}
           onChange={() => this.handleColorChange(name)}
@@ -83,7 +84,6 @@ class App extends React.Component {
           trackColor={this.state.trackColor}
           progressColor={this.state.progressColor}
         >
-
           <text x={size / 2} y={size / 2} style={textStyle}>
             {`${parseInt(this.state.progress, 10)}%`}
           </text>
