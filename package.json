@@ -5,9 +5,9 @@
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "build": "babel src --out-dir dist & webpack -p",
+    "build": "rm -rf dist && babel src --out-dir dist && webpack -p",
     "start": "webpack-dev-server -c --port=7788",
-    "deploy": "npm run build & github-pages-deploy",
+    "deploy": "npm run build && github-pages-deploy",
     "test": "jest --coverage"
   },
   "github-pages-deploy": {
@@ -20,6 +20,7 @@
     "react-dom": "^15.4.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.20.0",
     "babel-jest": "^19.0.0",
     "babel-loader": "^6.2.9",
