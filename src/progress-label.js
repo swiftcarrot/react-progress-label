@@ -84,12 +84,12 @@ export default class ProgressLabel extends Component {
       >
         <circle cx={size / 2} cy={size / 2} r={r} style={trackStyle} />
         {progress > 0 ? <path d={progressPath} style={progressStyle} /> : null}
-        {progress > 0
-          ? <circle cx={s.x} cy={s.y} r={cornersWidth} fill={progressColor} />
-          : null}
-        {progress > 0
-          ? <circle cx={e.x} cy={e.y} r={cornersWidth} fill={progressColor} />
-          : null}
+        {progress > 0 ? (
+          <circle cx={s.x} cy={s.y} r={cornersWidth} fill={progressColor} />
+        ) : null}
+        {progress > 0 ? (
+          <circle cx={e.x} cy={e.y} r={cornersWidth} fill={progressColor} />
+        ) : null}
         {children}
       </svg>
     );
