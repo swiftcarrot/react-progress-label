@@ -22,6 +22,7 @@ class App extends Component {
   };
 
   handleSliderChange(name, pos) {
+    console.log(name, pos);
     var s = {};
     s[name] = pos.x;
     this.setState(s);
@@ -42,7 +43,7 @@ class App extends Component {
           x={this.state[name]}
           xmin={min}
           xmax={max}
-          onChange={() => this.handleSliderChange(name)}
+          onChange={val => this.handleSliderChange(name, val)}
         />
       </div>
     );
@@ -51,12 +52,10 @@ class App extends Component {
   renderColor(name) {
     return (
       <div>
-        <span>
-          {name}
-        </span>
+        <span>{name}</span>
         <Color
           value={this.state[name]}
-          onChange={() => this.handleColorChange(name)}
+          onChange={val => this.handleColorChange(name, val)}
         />
       </div>
     );
