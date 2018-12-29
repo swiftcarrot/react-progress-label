@@ -1,6 +1,6 @@
 {
   "name": "react-progress-label",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "progress label component",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -11,6 +11,7 @@
     "prepublishOnly": "npm test && npm run build"
   },
   "files": [
+    "index.d.ts",
     "dist"
   ],
   "author": "Wang Zuo",
