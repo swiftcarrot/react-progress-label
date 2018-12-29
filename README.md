@@ -1,7 +1,9 @@
 # react-progress-label
 
 [![npm](https://img.shields.io/npm/v/react-progress-label.svg)](https://www.npmjs.com/package/react-progress-label)
-[![Build Status](https://travis-ci.org/wangzuo/react-progress-label.svg?branch=master)](https://travis-ci.org/wangzuo/react-progress-label)
+[![npm](https://img.shields.io/npm/dm/react-progress-label.svg)](https://www.npmjs.com/package/react-progress-label)
+[![Build Status](https://travis-ci.org/pqx/react-progress-label.svg?branch=master)](https://travis-ci.org/pqx/react-progress-label)
+[![codecov](https://codecov.io/gh/pqx/react-progress-label/branch/master/graph/badge.svg)](https://codecov.io/gh/pqx/react-progress-label)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 progress label component copied from [kirualex/KAProgressLabel](https://github.com/kirualex/KAProgressLabel) with svg
@@ -11,6 +13,7 @@ progress label component copied from [kirualex/KAProgressLabel](https://github.c
 ### Installation
 
 ```sh
+yarn add react-progress-label
 npm install react-progress-label --save
 ```
 
@@ -21,32 +24,17 @@ npm install react-progress-label --save
 ### Usage
 
 ```javascript
-import React from 'react';
-import ProgressLabel from 'react-progress-label';
-
-const App = () => {
-  const progress = 50;
-  const textStyle = {
-    fill: '#ffffff',
-    textAnchor: 'middle'
-  };
-
-  return (
-    <ProgressLabel
-      progress={progress}
-      startDegree={60}
-      progressWidth={8}
-      trackWidth={20}
-      cornersWidth={4}
-      size={400}
-      fillColor="black"
-      trackColor="red"
-      progressColor="green"
-    >
-      <text x="200" y="200" style={textStyle}>{`${progress}%`}</text>
-    </ProgressLabel>
-  );
-};
+<ProgressLabel
+  progress={50}
+  startDegree={60}
+  progressWidth={8}
+  trackWidth={20}
+  cornersWidth={4}
+  size={400}
+  fillColor="black"
+  trackColor="red"
+  progressColor="green"
+/>
 ```
 
 ### License

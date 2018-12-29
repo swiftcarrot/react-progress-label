@@ -1,8 +1,0 @@
-src
-example
-coverage
-__fixtures__
-__tests__
-yarn.lock
-screenshot.png
-webpack.config.js
