@@ -1,6 +1,6 @@
 {
   "name": "react-progress-label",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "description": "progress label component",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -43,11 +43,11 @@
   "devDependencies": {
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^24.1.0",
-    "babel-preset-zkit": "^0.1.4",
+    "babel-preset-zkit": "^0.1.5",
     "jest": "^24.1.0",
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
-    "react-test-renderer": "^16.8.1",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "react-test-renderer": "^16.8.2",
     "regenerator-runtime": "^0.13.1",
     "rollup": "^1.1.2",
     "rollup-plugin-babel": "^4.3.2",
