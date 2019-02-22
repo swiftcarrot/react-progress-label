@@ -330,6 +330,14 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-syntax-object-rest-spread" "^7.2.0"
 
+"@babel/plugin-proposal-object-rest-spread@^7.3.2":
+  version "7.3.2"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-object-rest-spread/-/plugin-proposal-object-rest-spread-7.3.2.tgz#6d1859882d4d778578e41f82cc5d7bf3d5daf6c1"
+  integrity sha512-DjeMS+J2+lpANkYLLO+m6GjoTMygYglKmRe6cDTbFv3L9i6mmiE8fe6B8MtCSLZpVXscD5kn7s6SgtHrDoBWoA==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/plugin-syntax-object-rest-spread" "^7.2.0"
+
 "@babel/plugin-proposal-optional-catch-binding@^7.2.0":
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-optional-catch-binding/-/plugin-proposal-optional-catch-binding-7.2.0.tgz#135d81edb68a081e55e56ec48541ece8065c38f5"
@@ -1084,14 +1092,15 @@ babel-preset-jest@^24.1.0:
     "@babel/plugin-syntax-object-rest-spread" "^7.0.0"
     babel-plugin-jest-hoist "^24.1.0"
 
-babel-preset-zkit@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/babel-preset-zkit/-/babel-preset-zkit-0.2.1.tgz#e2c48b306131c6205a36b74865880f3b92827ed1"
-  integrity sha512-lVUWgBlbkc7SE+062CVcwyniGfWBnA+ruRI7oel5FvT0V45EsDlWZ2S3SR/zx9nVGu8VSC5WApMLIdpQo65Wfw==
+babel-preset-zkit@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/babel-preset-zkit/-/babel-preset-zkit-0.2.2.tgz#da86564e5884cad1ab748e5f642c99461894db40"
+  integrity sha512-nklrVvU6ymz4ptG1yDS5hmH3Cd7iKSFx+ex/D5FS2q4XrqYAbjL5c4sNDe3G8H0dOSOjuBhdkY0c3HPUz9xsHA==
   dependencies:
     "@babel/core" "^7.3.3"
     "@babel/plugin-proposal-class-properties" "^7.3.3"
     "@babel/plugin-proposal-export-default-from" "^7.2.0"
+    "@babel/plugin-proposal-object-rest-spread" "^7.3.2"
     "@babel/plugin-syntax-dynamic-import" "^7.2.0"
     "@babel/plugin-transform-runtime" "^7.2.0"
     "@babel/preset-env" "^7.3.1"
