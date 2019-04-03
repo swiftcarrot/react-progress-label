@@ -1,10 +1,11 @@
 {
   "name": "react-progress-label",
-  "version": "3.0.15",
+  "version": "3.0.16",
   "description": "progress label component",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "build": "NODE_ENV=production rollup -c",
     "test": "jest --coverage",
