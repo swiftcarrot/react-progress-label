@@ -1,6 +1,6 @@
 {
   "name": "react-progress-label",
-  "version": "3.0.16",
+  "version": "3.0.17",
   "description": "progress label component",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -30,7 +30,7 @@
   "bugs": {
     "url": "https://github.com/wangzuo/react-progress-label/issues"
   },
-  "homepage": "https://code.swiftcarrot.com/react-progress-label",
+  "homepage": "https://swiftcarrot.dev/react-progress-label",
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.js"

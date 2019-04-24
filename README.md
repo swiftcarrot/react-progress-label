@@ -19,7 +19,7 @@ npm install react-progress-label --save
 
 ### Demo
 
-[https://code.swiftcarrot.com/react-progress-label](https://code.swiftcarrot.com/react-progress-label)
+[https://swiftcarrot.dev/react-progress-label](https://swiftcarrot.dev/react-progress-label)
 
 ### Usage
 
