@@ -1,6 +1,6 @@
 {
   "name": "react-progress-label",
-  "version": "3.0.17",
+  "version": "3.0.20",
   "description": "progress label component",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -37,23 +37,22 @@
     ]
   },
   "peerDependencies": {
-    "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3"
   },
   "devDependencies": {
-    "babel-jest": "^24.5.0",
-    "babel-preset-zkit": "^0.4.0",
-    "jest": "^24.5.0",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-test-renderer": "^16.8.4",
-    "rollup": "^1.6.0",
+    "babel-jest": "^24.8.0",
+    "babel-preset-swiftcarrot": "^0.6.1",
+    "jest": "^24.8.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-test-renderer": "^16.8.6",
+    "rollup": "^1.11.3",
     "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-commonjs": "^9.2.1",
-    "rollup-plugin-node-resolve": "^4.0.1"
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-node-resolve": "^4.2.3"
   },
   "dependencies": {
-    "@babel/runtime": "^7.3.4"
+    "@babel/runtime": "^7.4.4"
   }
 }

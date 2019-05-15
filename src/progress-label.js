@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 function getPoint(r, degree, size, trackWidth) {
   const d = (degree / 180) * Math.PI;
@@ -62,19 +61,6 @@ const ProgressLabel = ({
       {children}
     </svg>
   );
-};
-
-ProgressLabel.propTypes = {
-  size: PropTypes.number,
-  startDegree: PropTypes.number,
-  endDegree: PropTypes.number,
-  progressWidth: PropTypes.number,
-  trackWidth: PropTypes.number,
-  cornersWidth: PropTypes.number,
-  progress: PropTypes.number,
-  fillColor: PropTypes.string.isRequired,
-  trackColor: PropTypes.string.isRequired,
-  progressColor: PropTypes.string.isRequired
 };
 
 ProgressLabel.defaultProps = {
