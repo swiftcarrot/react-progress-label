@@ -1,6 +1,6 @@
 {
   "name": "react-progress-label",
-  "version": "3.0.22",
+  "version": "3.0.24",
   "description": "progress label component",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -15,11 +15,11 @@
     "index.d.ts",
     "dist"
   ],
-  "author": "Wang Zuo",
+  "author": "Wang Zuo <wzuoadjusted@gmail.com> (https://wangzuo.me/)",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wangzuo/react-progress-label.git"
+    "url": "git+https://github.com/swiftcarrot/react-progress-label.git"
   },
   "keywords": [
     "circle",
@@ -28,7 +28,7 @@
     "react-component"
   ],
   "bugs": {
-    "url": "https://github.com/wangzuo/react-progress-label/issues"
+    "url": "https://github.com/swiftcarrot/react-progress-label/issues"
   },
   "homepage": "https://swiftcarrot.dev/react-progress-label",
   "jest": {
@@ -42,17 +42,17 @@
   },
   "devDependencies": {
     "babel-jest": "^24.8.0",
-    "babel-preset-swiftcarrot": "^0.6.2",
+    "babel-preset-swiftcarrot": "^0.7.0",
     "jest": "^24.8.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-test-renderer": "^16.8.6",
-    "rollup": "^1.11.3",
+    "rollup": "^1.12.3",
     "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-commonjs": "^9.3.4",
-    "rollup-plugin-node-resolve": "^4.2.3"
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-node-resolve": "^5.0.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.4.4"
+    "@babel/runtime": "^7.4.5"
   }
 }
