@@ -40,5 +40,22 @@ export default [
       nodeResolve(),
       commonjs()
     ]
+  },
+
+  {
+    input: './src/native.js',
+    output: {
+      file: './dist/native.js',
+      format: 'esm'
+    },
+    external,
+    plugins: [
+      babel({
+        runtimeHelpers: true,
+        plugins: [['@babel/transform-runtime', { useESModules: true }]]
+      }),
+      nodeResolve(),
+      commonjs()
+    ]
   }
 ];

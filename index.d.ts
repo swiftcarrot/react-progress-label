@@ -6,6 +6,8 @@ export interface ProgressLabelProps extends SVGAttributes<ProgressLabel> {
   endDegree?: number;
   progressWidth?: number;
   trackWidth?: number;
+  trackBorderWidth?: number;
+  trackBorderColor?: string;
   cornersWidth?: number;
   progress?: number;
   fillColor: string;

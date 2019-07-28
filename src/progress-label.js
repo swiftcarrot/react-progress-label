@@ -10,6 +10,7 @@ function getPoint(r, degree, size, dy) {
 }
 
 const ProgressLabel = ({
+  components: { Svg, Circle, Path, Text },
   progress,
   progressWidth,
   progressColor,
@@ -50,9 +51,9 @@ const ProgressLabel = ({
   };
 
   return (
-    <svg {...props} width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
+    <Svg {...props} width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
       {trackBorderWidth > 0 ? (
-        <circle
+        <Circle
           cx={cx}
           cy={cy}
           r={size2 - trackBorderWidth / 2}
@@ -63,7 +64,7 @@ const ProgressLabel = ({
         />
       ) : null}
 
-      <circle
+      <Circle
         cx={cx}
         cy={cy}
         r={r}
@@ -75,7 +76,7 @@ const ProgressLabel = ({
       />
 
       {trackBorderWidth > 0 ? (
-        <circle
+        <Circle
           cx={cx}
           cy={cy}
           r={size2 - trackBorderWidth - trackWidth - trackBorderWidth / 2}
@@ -87,15 +88,15 @@ const ProgressLabel = ({
         />
       ) : null}
 
-      {progress > 0 ? <path d={progressPath} style={progressStyle} /> : null}
+      {progress > 0 ? <Path d={progressPath} style={progressStyle} /> : null}
       {progress > 0 ? (
-        <circle cx={s.x} cy={s.y} r={cornersWidth} fill={progressColor} />
+        <Circle cx={s.x} cy={s.y} r={cornersWidth} fill={progressColor} />
       ) : null}
       {progress > 0 ? (
-        <circle cx={e.x} cy={e.y} r={cornersWidth} fill={progressColor} />
+        <Circle cx={e.x} cy={e.y} r={cornersWidth} fill={progressColor} />
       ) : null}
-      {text ? <text {...textProps}>{text}</text> : null}
-    </svg>
+      {text ? <Text {...textProps}>{text}</Text> : null}
+    </Svg>
   );
 };
 
@@ -110,7 +111,13 @@ ProgressLabel.defaultProps = {
   size: 200,
   fillColor: '#ffffff',
   trackColor: '#ff0000',
-  progressColor: '#00ff00'
+  progressColor: '#00ff00',
+  components: {
+    Svg: 'svg',
+    Path: 'path',
+    Circle: 'circle',
+    Text: 'text'
+  }
 };
 
 export default ProgressLabel;
