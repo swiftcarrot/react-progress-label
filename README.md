@@ -29,6 +29,8 @@ npm install react-progress-label --save
   startDegree={60}
   progressWidth={8}
   trackWidth={20}
+  trackBorderWidth={0}
+  trackBorderColor="#0000ff"
   cornersWidth={4}
   size={400}
   fillColor="black"

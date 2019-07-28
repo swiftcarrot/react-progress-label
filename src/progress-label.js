@@ -14,15 +14,20 @@ const ProgressLabel = ({
   progressWidth,
   progressColor,
   trackWidth,
+  trackBorderWidth,
+  trackBorderColor,
   cornersWidth,
   fillColor,
   trackColor,
   startDegree,
   size,
-  children,
+  text,
+  textProps,
   ...props
 }) => {
-  const r = size / 2 - trackWidth / 2;
+  const cx = size / 2;
+  const cy = cx;
+  const r = size / 2 - trackBorderWidth - trackWidth / 2;
   const endDegree = startDegree + (progress * 360) / 100;
   const s = getPoint(r, startDegree, size, trackWidth);
   const e = getPoint(r, endDegree, size, trackWidth);
@@ -42,15 +47,44 @@ const ProgressLabel = ({
     fill: 'none'
   };
 
-  const trackStyle = {
-    fill: fillColor,
-    stroke: trackColor,
-    strokeWidth: trackWidth
-  };
-
   return (
     <svg {...props} width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
-      <circle cx={size / 2} cy={size / 2} r={r} style={trackStyle} />
+      {trackBorderWidth > 0 ? (
+        <circle
+          cx={cx}
+          cy={cy}
+          r={size / 2 - trackBorderWidth / 2}
+          style={{
+            stroke: trackBorderColor,
+            strokeWidth: trackBorderWidth
+          }}
+        />
+      ) : null}
+
+      <circle
+        cx={cx}
+        cy={cy}
+        r={r}
+        style={{
+          fill: fillColor,
+          stroke: trackColor,
+          strokeWidth: trackWidth
+        }}
+      />
+
+      {trackBorderWidth > 0 ? (
+        <circle
+          cx={cx}
+          cy={cy}
+          r={size / 2 - trackBorderWidth - trackWidth - trackBorderWidth / 2}
+          style={{
+            stroke: trackBorderColor,
+            strokeWidth: trackBorderWidth,
+            fill: fillColor
+          }}
+        />
+      ) : null}
+
       {progress > 0 ? <path d={progressPath} style={progressStyle} /> : null}
       {progress > 0 ? (
         <circle cx={s.x} cy={s.y} r={cornersWidth} fill={progressColor} />
@@ -58,7 +92,7 @@ const ProgressLabel = ({
       {progress > 0 ? (
         <circle cx={e.x} cy={e.y} r={cornersWidth} fill={progressColor} />
       ) : null}
-      {children}
+      {text ? <text {...textProps}>{text}</text> : null}
     </svg>
   );
 };
@@ -68,6 +102,8 @@ ProgressLabel.defaultProps = {
   progress: 0,
   progressWidth: 5,
   trackWidth: 20,
+  trackBorderWidth: 0,
+  trackBorderColor: '#0000ff',
   cornersWidth: 10,
   size: 200,
   fillColor: '#ffffff',
