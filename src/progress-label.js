@@ -1,11 +1,11 @@
 import React from 'react';
 
-function getPoint(r, degree, size, trackWidth) {
+function getPoint(r, degree, size, dy) {
   const d = (degree / 180) * Math.PI;
 
   return {
     x: r * Math.sin(d) + size / 2,
-    y: trackWidth / 2 + r * (1 - Math.cos(d))
+    y: r * (1 - Math.cos(d)) + dy
   };
 }
 
@@ -25,18 +25,20 @@ const ProgressLabel = ({
   textProps,
   ...props
 }) => {
-  const cx = size / 2;
+  const size2 = size / 2;
+  const cx = size2;
   const cy = cx;
-  const r = size / 2 - trackBorderWidth - trackWidth / 2;
+  const dy = trackWidth / 2 + trackBorderWidth;
+  const r = size2 - dy;
   const endDegree = startDegree + (progress * 360) / 100;
-  const s = getPoint(r, startDegree, size, trackWidth);
-  const e = getPoint(r, endDegree, size, trackWidth);
+  const s = getPoint(r, startDegree, size, dy);
+  const e = getPoint(r, endDegree, size, dy);
 
   let progressPath = null;
   if (progress < 50) {
     progressPath = `M ${s.x} ${s.y} A ${r} ${r}, 0, 0, 1, ${e.x},${e.y}`;
   } else {
-    const m = getPoint(r, startDegree + 180, size, trackWidth);
+    const m = getPoint(r, startDegree + 180, size, dy);
     progressPath = `M ${s.x} ${s.y} A ${r} ${r}, 0, 0, 1, ${m.x},${m.y}
         M ${m.x} ${m.y} A ${r} ${r}, 0, 0, 1, ${e.x},${e.y}`;
   }
@@ -53,7 +55,7 @@ const ProgressLabel = ({
         <circle
           cx={cx}
           cy={cy}
-          r={size / 2 - trackBorderWidth / 2}
+          r={size2 - trackBorderWidth / 2}
           style={{
             stroke: trackBorderColor,
             strokeWidth: trackBorderWidth
@@ -76,7 +78,7 @@ const ProgressLabel = ({
         <circle
           cx={cx}
           cy={cy}
-          r={size / 2 - trackBorderWidth - trackWidth - trackBorderWidth / 2}
+          r={size2 - trackBorderWidth - trackWidth - trackBorderWidth / 2}
           style={{
             stroke: trackBorderColor,
             strokeWidth: trackBorderWidth,
