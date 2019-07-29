@@ -41,7 +41,7 @@ npm install react-progress-label --save
 
 ### React Native usage
 
-[react-native-svg](https://github.com/react-native-community/react-native-svg]) required
+[react-native-svg](https://github.com/react-native-community/react-native-svg) required
 
 ```javascript
 import ProgressLabel from 'react-progress-label/native';
