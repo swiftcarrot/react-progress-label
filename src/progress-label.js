@@ -51,7 +51,13 @@ const ProgressLabel = ({
   };
 
   return (
-    <Svg {...props} width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
+    <Svg
+      {...props}
+      width={size}
+      height={size}
+      viewBox={`0 0 ${size} ${size}`}
+      fill={trackColor}
+    >
       {trackBorderWidth > 0 ? (
         <Circle
           cx={cx}
@@ -63,17 +69,6 @@ const ProgressLabel = ({
           }}
         />
       ) : null}
-
-      <Circle
-        cx={cx}
-        cy={cy}
-        r={r}
-        style={{
-          fill: fillColor,
-          stroke: trackColor,
-          strokeWidth: trackWidth
-        }}
-      />
 
       {trackBorderWidth > 0 ? (
         <Circle
