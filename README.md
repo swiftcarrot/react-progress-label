@@ -44,7 +44,7 @@ npm install react-progress-label --save
 We need to install [react-native-svg](https://github.com/react-native-community/react-native-svg) first. The native version implements the same api as the web version.
 
 ```javascript
-import ProgressLabel from 'react-progress-label/native';
+import ProgressLabel from 'react-progress-label';
 ```
 
 This project is inspired by [kirualex/KAProgressLabel](https://github.com/kirualex/KAProgressLabel).

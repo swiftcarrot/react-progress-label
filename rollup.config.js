@@ -45,7 +45,7 @@ export default [
   {
     input: './src/native.js',
     output: {
-      file: './dist/native.js',
+      file: pkg['react-native'],
       format: 'esm'
     },
     external,
