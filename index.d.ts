@@ -1,4 +1,6 @@
-import { Component, SVGAttributes } from 'react';
+import { Component, FC, SVGAttributes } from 'react';
+
+declare const ProgressLabel: FC<ProgressLabelProps>;
 
 export interface ProgressLabelProps extends SVGAttributes<ProgressLabel> {
   size?: number;
@@ -15,7 +17,4 @@ export interface ProgressLabelProps extends SVGAttributes<ProgressLabel> {
   progressColor: string;
 }
 
-export default class ProgressLabel extends Component<
-  ProgressLabelProps,
-  void
-> {}
+export default ProgressLabel;
