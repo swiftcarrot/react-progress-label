@@ -1,1 +1,1 @@
-export default from './progress-label';
+export default from "./progress-label";

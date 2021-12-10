@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
 
 function getPoint(r, degree, size, dy) {
   const d = (degree / 180) * Math.PI;
 
   return {
     x: r * Math.sin(d) + size / 2,
-    y: r * (1 - Math.cos(d)) + dy
+    y: r * (1 - Math.cos(d)) + dy,
   };
 }
 
-const ProgressLabel = ({
+export default function ProgressLabel({
   components: { Svg, Circle, Path, Text },
   progress,
   progressWidth,
@@ -25,7 +25,7 @@ const ProgressLabel = ({
   text,
   textProps,
   ...props
-}) => {
+}) {
   const size2 = size / 2;
   const cx = size2;
   const cy = cx;
@@ -47,7 +47,7 @@ const ProgressLabel = ({
   const progressStyle = {
     strokeWidth: progressWidth,
     stroke: progressColor,
-    fill: 'none'
+    fill: "none",
   };
 
   return (
@@ -65,7 +65,7 @@ const ProgressLabel = ({
           r={size2 - trackBorderWidth / 2}
           style={{
             stroke: trackBorderColor,
-            strokeWidth: trackBorderWidth
+            strokeWidth: trackBorderWidth,
           }}
         />
       ) : null}
@@ -78,7 +78,7 @@ const ProgressLabel = ({
           style={{
             stroke: trackBorderColor,
             strokeWidth: trackBorderWidth,
-            fill: fillColor
+            fill: fillColor,
           }}
         />
       ) : null}
@@ -93,7 +93,7 @@ const ProgressLabel = ({
       {text ? <Text {...textProps}>{text}</Text> : null}
     </Svg>
   );
-};
+}
 
 ProgressLabel.defaultProps = {
   startDegree: 0,
@@ -101,18 +101,16 @@ ProgressLabel.defaultProps = {
   progressWidth: 5,
   trackWidth: 20,
   trackBorderWidth: 0,
-  trackBorderColor: '#0000ff',
+  trackBorderColor: "#0000ff",
   cornersWidth: 10,
   size: 200,
-  fillColor: '#ffffff',
-  trackColor: '#ff0000',
-  progressColor: '#00ff00',
+  fillColor: "#ffffff",
+  trackColor: "#ff0000",
+  progressColor: "#00ff00",
   components: {
-    Svg: 'svg',
-    Path: 'path',
-    Circle: 'circle',
-    Text: 'text'
-  }
+    Svg: "svg",
+    Path: "path",
+    Circle: "circle",
+    Text: "text",
+  },
 };
-
-export default ProgressLabel;

@@ -1,8 +1,8 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import ProgressLabel from '../progress-label';
+import React from "react";
+import renderer from "react-test-renderer";
+import ProgressLabel from "../progress-label";
 
-test('render', () => {
+test("render", () => {
   const component = renderer.create(<ProgressLabel />);
   expect(component.toJSON()).toMatchInlineSnapshot(`
     <svg
